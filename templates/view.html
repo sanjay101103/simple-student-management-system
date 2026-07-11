@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Students</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h2>Student List</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Department</th>
+<th>Delete</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+
+<td>{{s.Name}}</td>
+
+<td>{{s.Age}}</td>
+
+<td>{{s.Department}}</td>
+
+<td>
+<a href="/delete/{{s.Name}}">Delete</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">Home</a>
+
+</body>
+
+</html>
